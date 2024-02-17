@@ -29,19 +29,6 @@ function App() {
           <h1 className="text-2xl font-semibold mb-4">Treenance</h1>
           {/* Grass Field */}
           <div className="grid grid-cols-3 gap-2">
-            <div className='flex flex-col col-span-3 h-36 bg-green-500 rounded-lg'>
-              <h2 className='mx-auto'>Enter Financials:</h2>
-                <div className='mx-auto flex flex-row space-x-8'>
-                  <div>
-                    <label className="block">Ciao bello!</label>
-                    <input className="block"></input>
-                  </div>
-                  <div>
-                    <label className="block">Ciao Bello2!</label>
-                    <input className="block"></input>
-                  </div>
-                </div>
-              </div>
             <div className="bg-green-500 h-36 rounded-lg"></div>
             <div className="bg-green-400 h-36 rounded-lg"></div>
             <div className="bg-green-300 h-36 rounded-lg"></div>
