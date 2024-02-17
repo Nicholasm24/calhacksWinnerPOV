@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import ProgressBar from './progressBar';
 import './App.css';
 
 function App() {
@@ -22,9 +23,24 @@ function App() {
       </nav>
 
       {/* Content Area */}
-      <div className="container mx-auto mt-8 px-4">
-        <h1 className="text-2xl font-semibold mb-4">Welcome to Your Dashboard</h1>
-        <p className="text-gray-600">This is a basic example of a dashboard with a navigation bar at the top using Tailwind CSS.</p>
+      <div className="container mx-auto mt-8 px-4 flex">
+        {/* Main Content */}
+        <ProgressBar percentage={50}/>
+        <div className="flex-1">
+          <h1 className="text-2xl font-semibold mb-4">Treenance</h1>
+          {/* Grass Field */}
+          <div className="grid grid-cols-3 gap-2">
+            <div className="bg-green-500 h-24 rounded-lg"></div>
+            <div className="bg-green-400 h-20 rounded-lg"></div>
+            <div className="bg-green-300 h-16 rounded-lg"></div>
+            <div className="bg-green-500 h-20 rounded-lg"></div>
+            <div className="bg-green-400 h-24 rounded-lg"></div>
+            <div className="bg-green-300 h-16 rounded-lg"></div>
+            <div className="bg-green-500 h-20 rounded-lg"></div>
+            <div className="bg-green-400 h-24 rounded-lg"></div>
+            <div className="bg-green-300 h-20 rounded-lg"></div>
+          </div>
+        </div>
       </div>
     </div>
   );
