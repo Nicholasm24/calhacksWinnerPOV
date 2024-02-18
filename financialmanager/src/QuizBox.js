@@ -1,5 +1,5 @@
 // src/QuizBox.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 
 function QuizBox({ question, options, handleAnswer }) {
@@ -40,6 +40,9 @@ function QuizBox({ question, options, handleAnswer }) {
     return (
         <div className="flex flex-col p-3 bg-green-500 h-36 rounded-lg relative">
             {showButton && (
+                // Show the question as a button
+                // When the button is clicked, show the modal
+                // and hide the button
                 <button
                     onClick={(event) => {
                         event.stopPropagation();
@@ -59,6 +62,7 @@ function QuizBox({ question, options, handleAnswer }) {
                         <Modal
                             content={modalContent}
                             onClose={() => {
+                                // Close the modal and show the button
                                 setIsOpen(false);
                                 setShowButton(true);
                             }}

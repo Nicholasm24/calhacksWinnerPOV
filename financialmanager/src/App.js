@@ -70,7 +70,7 @@ function App() {
         </div>
       </nav>
 
-      {/* Content Area */}
+      {/* Quiz Area */}
       <div className="container mx-auto mt-4 px-4 flex space-x-6">
         {/* Main Content */}
         <ProgressBar percentage={50} />
