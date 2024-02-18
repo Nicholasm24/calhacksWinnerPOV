@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import penguin from './pictures/penguin.png'
-import tree1 from './pictures/tree1.png'
-import tree2 from './pictures/tree2.png'
-import tree3 from './pictures/tree3.png'
-import tree4 from './pictures/tree4.png'
-import tree5 from './pictures/tree5.png'
+import penguin from './pictures/penguin.png';
+import tree1 from './pictures/tree1.png';
+import tree2 from './pictures/tree2.png';
+import tree3 from './pictures/tree3.png';
+import tree4 from './pictures/tree4.png';
+import tree5 from './pictures/tree5.png';
 
 const ProgressBar = ({ counter }) => {
   let imageSrc;
