@@ -2,6 +2,7 @@ import ProgressBar from './progressBar';
 import Modal from './Modal';
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import gsap from 'gsap';
 import QuizBox from './QuizBox';
 
 window.onload=function(){
@@ -78,15 +79,15 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-200">
+    <div className="gradient-guy min-h-screen bg-gray-200">
       {/* Quiz Area */}
-      <div className="container mx-auto mt-4 px-4 flex space-x-6">
+      <div className="gradient-guy-two container mx-auto mt-4 px-4 flex space-x-6">
         {/* Main Content */}
-        <ProgressBar counter={counter} />
+        <ProgressBar className="photo-app" counter={counter} />
         <div className="flex-1">
-          <h1 className="text-2xl font-semibold mb-4">Treenance</h1>
+          <h1 className="text-2xl font-semibold mb-4">Budgeting Dashboard</h1>
           <div className="grid grid-cols-3 gap-2">
-            <QuizBox
+            <QuizBox className="quiz-cards"
               question="Why is budgeting considered the first step in managing personal finances?"
               options={['A. Budgeting is the process of planning how to spend money, which helps identify areas to reduce spending and increase savings.', 
               'B. Budgeting is a way to track how much money is spent on entertainment.',
@@ -105,7 +106,7 @@ function App() {
               `}
             />
 
-            <QuizBox
+            <QuizBox className="quiz-cards"
               question="What is the correct way to calculate net income?"
               options={['A. Net income is calculated by subtracting total expenses from total income.',
               'B. Net income is calculated by adding total expenses to total income.',
@@ -123,7 +124,7 @@ function App() {
               `}
             />
 
-            <QuizBox
+            <QuizBox className="quiz-cards"
               question="What is the correct sequence of steps to manage your personal finances effectively?"
               options={['A. Start tracking your daily spending, calculate your net income, and then list your fixed and variable expenses.',
               'B. Calculate your net income, start tracking your daily spending, and then list your fixed and variable expenses.',

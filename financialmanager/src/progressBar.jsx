@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import penguin from './pictures/penguin.png';
+// import penguin from './pictures/penguin.png';
+import ProgressBarStyle from './progressBarStyle.css';
 import tree1 from './pictures/tree1.png';
 import tree2 from './pictures/tree2.png';
 import tree3 from './pictures/tree3.png';
@@ -21,7 +22,7 @@ const ProgressBar = ({ counter }) => {
   }
 
   return (
-    <div className="bg-blue-200 w-full md:w-1/3 relative">
+    <div className="photo-div bg-blue-200 w-full md:w-1/3 relative">
       <img src={imageSrc} alt="tree" className="w-full h-auto" />
       {/* Remove the HTML comment syntax */}
       {/* <div className="bg-blue-500 absolute bottom-0 left-0 rounded-b-lg" style={{ width: `${barWidth}%`, height: `${barHeightFraction * 100}%` }}></div> */}
