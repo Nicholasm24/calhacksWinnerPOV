@@ -88,13 +88,22 @@ function App() {
           <div className="grid grid-cols-3 gap-2">
 
             <QuizBox
-              question="Question 1. Correct answers will lead the tree to grow."
-              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              question="Why is budgeting considered the first step in managing personal finances?"
+              options={['A. Budgeting is the process of planning how to spend money, which helps identify areas to reduce spending and increase savings.', 
+              'B. Budgeting is a way to track how much money is spent on entertainment.',
+              'C. Budgeting is only necessary for people with high incomes.',
+              'D. Budgeting is a tool for calculating annual taxes.']}
               handleAnswer={handleAnswer11}
-              answerMessage={'This is the correct answer: ...'}
+              answerMessage={'The correct answer is A. Budgeting is the process of planning how to spend money, which helps identify areas to reduce spending and increase savings. \n\n\nIt provides a clear picture of your financial situation, enabling you to make informed decisions about saving and spending. While saving is the ultimate goal, budgeting is the tool that helps you reach that goal.'}
               handleCorrectAnswer={handleCorrectAnswer}
               correctAnswerIndex={1}
-              educationalContent={'This is the educational content: ...'}
+              educationalContent={
+              `Why?
+              Budgeting is the process of creating a plan to spend your money. This spending plan, or budget, is a detailed plan that shows how much money you expect to earn or receive (your income) and how you will distribute it among various expenses.
+              Once you have a budget, you can see where your money is going, which can help you identify areas where you can reduce spending. The money you save from reducing spending can then be put into savings.
+              So, while saving is the goal, budgeting is the tool that helps you understand your financial situation and make informed decisions about how to reach that goal. Therefore, budgeting usually comes before saving. However, the two go hand in hand and are both important parts of sound financial management.
+              
+              `}
             />
 
             <QuizBox
