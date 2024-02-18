@@ -4,6 +4,13 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import QuizBox from './QuizBox';
 
+window.onload=function(){
+  var mb = document.getElementById("return");
+  mb.addEventListener("click", function() {
+    window.location.href = "overview.html"
+  });
+}
+
 function App() {
   // State variable to keep track of the number of correct answers
   const [counter, setCounter] = useState(0);
@@ -27,6 +34,7 @@ function App() {
     setSelectedAnswer(answer);
     setIsOpen(true);
   };
+
 
   const modal11 = (title, option1, option2, option3, option4) =>
     showModal ? (
@@ -271,8 +279,14 @@ function App() {
           </div>
         </div>
       </div>
+
+        <button id = "return" >
+              Return
+        </button>
+
     </div>
   );
 }
 
 export default App;
+
