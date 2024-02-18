@@ -1,0 +1,339 @@
+@font-face {
+    font-family: Product Sans;
+    src: url(Fonts/Product\ Sans\ Regular.ttf);
+}
+@font-face {
+    font-family: Product Sans B;
+    src: url(Fonts/Product\ Sans\ Bold.ttf);
+}
+
+.tree-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tree {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    animation: treeAnimate 5s linear infinite;
+  }
+  
+  @keyframes treeAnimate {
+    0% {
+      transform: rotateX(-20deg) rotateY(360deg);
+    }
+  
+    100% {
+      transform: rotateX(-20deg) rotateY(0deg);
+    }
+  }
+  
+  .tree div {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateY(calc(25px * var(--x))) translateZ(0px);
+  }
+  
+  .tree div.branch span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #69c069, #77dd77);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border-bottom: 5px solid #00000019;
+    transform-origin: bottom;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(28.5px);
+  }
+  
+  .tree div.stem span {
+    position: absolute;
+    top: 110px;
+   /* updated top value */
+    left: calc(50% - 7.5px);
+    width: 15px;
+    height: 50%;
+    background: linear-gradient(90deg, #bb4622, #df7214);
+    border-bottom: 5px solid #00000019;
+    transform-origin: bottom;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(7.5px);
+  }
+  
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    filter: blur(20px);
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateZ(-65px);
+  }
+  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Product Sans;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+#main{
+    width: 100%;
+    height: 100vh;
+    background-color: orangered;
+}
+
+.one{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(150deg, rgb(21, 73, 141), rgb(255, 94, 0));
+}
+
+.lock-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .lock-checkbox input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .lock-icon {
+    fill: #00ff40;
+    position: absolute;
+    top: 30%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .lock-checkbox input[type="checkbox"]:checked + .lock-icon {
+    fill: #ff0000;
+  }
+  
+
+.one {
+    background: linear-gradient(156deg,#faeb90,#348ad2,#b39b38, #85c0b,#be1b4f,#9e372f);
+    background-size: 360% 360%;
+    animation: gradient-animation 42s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+.one h1{
+    font-size: 15vw;
+    font-family: Product Sans B;
+    color: #fff;
+}
+
+#fanta{
+    position: absolute;
+    width: 40%;
+    z-index: 2;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+}
+
+#orange-cut{
+    position: absolute;
+    top: 10%;
+    left: 32%;
+    width: 15%;
+    z-index: 1;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
+}
+
+#orange{
+    position: absolute;
+    width: 20%;
+    z-index: 3;
+    top: 55%;
+    right: 30%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
+}
+
+#leaf{
+    top: 10%;
+    left: 0%;
+    transform: rotate(60deg);
+    position: absolute;
+    width: 18%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
+}
+
+#leaf2{
+    top: 70%;
+    left: 80%;
+    transform: rotate(-90deg);
+    position: absolute;
+    width: 12%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
+}
+
+#leaf3{
+    position: absolute;
+    width: 20%;
+    top: 10%;
+    right: 0%;
+}
+
+.two{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background:#4d231c ;
+}
+
+.lft-two, .rght-two{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5vh;
+    width: 50%;
+    height: 100%;
+}
+
+.lft-two svg{
+    margin-top: 50vh;
+    width: 90%;
+    transform: rotateX(50deg);
+}
+
+.rght-two h1{
+    color: #fff;
+    font-size: 5vw;
+}
+
+.rght-two p{
+    font-size: 1vw;
+    color: #fff;
+    width: 80%;
+}
+
+.three{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(150deg, rgb(255, 166, 0), rgb(255, 94, 0));
+}
+
+.card{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2vh;
+    width: 25vw;
+    height: 70vh;
+    margin-top: 10vh;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.card h1{
+    margin-top: 40vh;
+    font-size: 3vw;
+}
+
+.card button{
+    font-size: 1vw;
+    border-radius: 50px;
+    border: none;
+    color: #fff;
+    background-color: rgb(255, 149, 0);
+    padding: 1vw 2vw;
+}
+
+#cocacola{
+    top: -15%;
+    position: absolute;
+    width: 60%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
+}
+
+#pepsi{
+    top: -15%;
+    position: absolute;
+    width: 85%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+
+}
+
+.lemon{
+    top: 5%;
+    position: absolute;
+    left: 50%;
+    width: 25vw;
+    transform: translate(-50%, 0%);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
+}
+#big-tree{
+    width: 80%; /* Adjust based on the desired size and the .card container's size */
+    max-width: 300px; /* Maximum size to ensure it doesn't get too large */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px 0; /* Add some space around the image */
+    transform: translateY(-50%); /* Adjust if you need to vertically center */
+  }
+  
+  #big-tree-class img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    margin-top:60% ;
+  }
+
+
