@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 
-function QuizBox({ question, options, handleAnswer, answerMessage, handleCorrectAnswer, correctAnswerIndex }) {
+function QuizBox({ question, options, handleAnswer, answerMessage, handleCorrectAnswer, correctAnswerIndex, educationalContent }) {
     const [showModal, setShowModal] = useState(false);
     const [showButton, setShowButton] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +15,7 @@ function QuizBox({ question, options, handleAnswer, answerMessage, handleCorrect
             <div className="grid grid-cols-2 gap-2 h-full">
                 <div className="bg-white p-4 rounded-lg overflow-auto">
                     {/* Add your miscellaneous content here */}
+                    {educationalContent}
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                 {options.map((option, index) => (
