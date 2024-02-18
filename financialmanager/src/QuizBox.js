@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 
-function QuizBox({ question, options, handleAnswer }) {
+function QuizBox({ question, options, handleAnswer, answerMessage }) {
     const [showModal, setShowModal] = useState(false);
     const [showButton, setShowButton] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
@@ -60,7 +60,12 @@ function QuizBox({ question, options, handleAnswer }) {
                     {modalContent}
                     {isOpen && (
                         <Modal
-                            content={modalContent}
+                            content={
+                                <>
+                                {modalContent}
+                                <p className='mt-4'>{answerMessage}</p>
+                                </>
+                            }
                             onClose={() => {
                                 // Close the modal and show the button
                                 setIsOpen(false);

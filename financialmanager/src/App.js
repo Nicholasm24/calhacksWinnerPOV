@@ -82,6 +82,7 @@ function App() {
               question="Question 1. Correct answers will lead the tree to grow."
               options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
               handleAnswer={handleAnswer11}
+              answerMessage={'This is the correct answer: ...'}
             />
 
             <QuizBox
