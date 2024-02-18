@@ -93,20 +93,41 @@ function App() {
               Budgeting is the process of creating a plan to spend your money. This spending plan, or budget, is a detailed plan that shows how much money you expect to earn or receive (your income) and how you will distribute it among various expenses.
               Once you have a budget, you can see where your money is going, which can help you identify areas where you can reduce spending. The money you save from reducing spending can then be put into savings.
               So, while saving is the goal, budgeting is the tool that helps you understand your financial situation and make informed decisions about how to reach that goal. Therefore, budgeting usually comes before saving. However, the two go hand in hand and are both important parts of sound financial management.
-              
+              Why is budgeting considered the first step in managing personal finances?
               `}
             />
 
             <QuizBox
-              question="Question 1. Correct answers will lead the tree to grow."
-              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              question="What is the correct way to calculate net income?"
+              options={['A. Net income is calculated by subtracting total expenses from total income.',
+              'B. Net income is calculated by adding total expenses to total income.',
+              'C. Net income is the total income before any deductions.',
+              'D. Net income is the total of all taxes paid.']}
               handleAnswer={handleAnswer11}
+              answerMessage={'The correct answer is A. Net income is calculated by subtracting total expenses (including taxes and deductions for employer-provided programs) from total income. This is the amount you actually take home and have available for spending and saving.'}
+              handleCorrectAnswer={handleCorrectAnswer}
+              correctAnswerIndex={1}
+              educationalContent={`
+              1.1 Calculate Income
+              The cornerstone of a successful budget is your net income. This is the amount you actually bring home after deductions for taxes and employer-sponsored programs like retirement plans and health insurance have been made from your total wages or salary. Concentrating on your gross salary instead of your net income can result
+              in overspending, as it may give the illusion of having more disposable income than you actually do. If you’re self-employed, a contractor, a gig worker, or a freelancer, it’s crucial to meticulously record your contracts and payments to effectively manage an irregular income stream.
+              What is the correct way to calculate net income?
+              `}
             />
 
             <QuizBox
-              question="Question 1. Correct answers will lead the tree to grow."
-              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              question="What is the correct sequence of steps to manage your personal finances effectively?"
+              options={['A. Start tracking your daily spending, calculate your net income, and then list your fixed and variable expenses.',
+              'B. Calculate your net income, start tracking your daily spending, and then list your fixed and variable expenses.',
+              'C. List your fixed and variable expenses, calculate your net income, and then start tracking your daily spending',
+              'D. Calculate your net income, list your fixed and variable expenses, and then start tracking your daily spending.']}
               handleAnswer={handleAnswer11}
+              correctAnswerIndex={1}
+              educationalContent={`
+              1.3 Set Goals 
+              Before you begin analyzing the financial data you’ve 
+              gathered, establish a list of your short-term and long-term financial objectives. Short-term objectives, which could include establishing an emergency fund or reducing credit card debt, should be achievable within one to three years. Long-term objectives, such as saving for retirement or funding your child’s education, may require decades to fulfill. Keep in mind that your goals are not rigid and can be adjusted as needed, but having them can provide motivation to adhere to your budget. For instance, knowing that you’re saving for a vacation might make it easier to curb spending.
+              `}
             />
 
             <QuizBox
