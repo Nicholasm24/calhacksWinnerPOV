@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="overview.css">
-    <title>Fanta ka website</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='overview.css') }}">
+    <title>Overview of financing</title>
 </head>
 <body>
     <div id="main">
@@ -72,10 +72,10 @@
                 <!-- <img class="lemon lemon1" src="Assets/lemon.webp" alt=""> -->
                 <!-- <img id="cocacola" src="Assets/cocacola.png" alt=""> -->
                 <h1>Budgeting</h1>
-                <button>Click me</button>
+                <button><a href="{{ url_for('serve') }}">Click me</a></button>
             </div>
             <div class="card">
-                <img class="lemon" id="bonsai-tree" src="pictures/—Pngtree—potted bonsai tree_5264954.png" alt="">
+                <img class="lemon" id="bonsai-tree" src="{{ url_for('static', filename='—Pngtree—potted bonsai tree_5264954.png') }}" alt="">
                 <h1>Saving</h1>
                 <button><label class="lock-checkbox">
                     <input id="lock" type="checkbox">
@@ -88,7 +88,7 @@
                   </button>
             </div>
             <div id="big-tree-class" class="card">
-                <img id="big-tree" src="pictures/vecteezy_expensive-beautiful-bonsai-tree-ai-generative_29336158.png" alt="">
+                <img id="big-tree" src="{{ url_for('static', filename='vecteezy_expensive-beautiful-bonsai-tree-ai-generative_29336158.png') }}" alt="">
                 <!-- <img class="lemon lemon2" src="Assets/lemon.webp" alt=""> -->
                 <!-- <img id="big-tree" src="pictures/vecteezy_expensive-beautiful-bonsai-tree-ai-generative_29336158.png" alt=""> -->
                 <h1>Investing</h1>
@@ -108,6 +108,6 @@
     <script src="https://threejs.org/build/three.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="overview.js"></script>
+    <script src="{{ url_for('static', filename='overview.js') }}"></script>
 </body>
 </html>
