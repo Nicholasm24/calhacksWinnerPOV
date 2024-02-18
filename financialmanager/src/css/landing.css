@@ -1,0 +1,208 @@
+body {
+    background: linear-gradient(-45deg, #000000, #0A0A0A, #0D47A1, #000051);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    color: #fff;
+    font-family: "Kanit", sans-serif;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    /* border: 5px solid green; */
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+.container h1 {
+    font-weight: 400;
+  }
+
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .title, .treenance {
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  
+  .title {
+    font-size: 5rem;
+  }
+  
+  .treenance {
+    font-size: 7rem;
+  }
+  
+  #welcome-wrapper{
+    margin-top: 18%;
+  }
+.animated-letter {
+    margin: -2;
+    padding: -2;
+    display: inline-block; /* Allows transformation of individual letters */
+    opacity: 0; /* Start with letters invisible */
+  }
+  .typed-out-container {
+    display: inline-block;
+    font-size: 1.6rem; /* Adjust font size as needed */
+  }
+  
+  .typed-out {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end) forwards;
+    display: inline-block; /* Aligns text properly */
+    position: relative; /* Necessary for absolute positioning of the pseudo-element */
+    font-size: 1.6rem; /* Ensure font size is consistent */
+    line-height: 1em; /* Fine-tune line height to match cursor position */
+  }
+  
+  .typed-out::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Center cursor vertically */
+    transform: translateY(-50%); /* Adjust cursor to align with the middle of the text */
+    right: 0; /* Position at the end of the text */
+    height: 1em; /* Matches the height of the text */
+    width: 0.1em; /* Cursor width */
+    background-color: white; /* Cursor color */
+    animation: blinkCursor 0.75s steps(1) infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; } /* Ensures it fills the container */
+  }
+  
+  @keyframes blinkCursor {
+    50% { opacity: 0; }
+  }
+
+  #scroll-down {
+    position: fixed; /* Or absolute, depending on your layout */
+    bottom: 20px; /* Position at the bottom of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+    color: #fff; /* Adjust color to match your design */
+    font-family: "Kanit", sans-serif; /* Consistent with your page's font */
+    font-size: 1rem; /* Adjust size as needed */
+    text-align: center;
+    cursor: pointer; /* Indicates interactiveness */
+    animation: bounce 2s infinite; /* Bouncing animation to draw attention */
+    user-select: none; /* Prevent text selection */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  /* Keyframes for the bouncing animation */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-20px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
+  
+
+  .name-container{
+    /* width: 50%;
+    position: absolute; */
+    display: flex;
+  }
+  
+  .name-container {
+    height: 200px;
+    background: none;
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.5s ease, visibility 0.5s; 
+    display: flex;
+    justify-content: center; /* Center the input horizontally */
+    padding: 20px; /* Add some padding around the container for spacing */
+  }
+  
+  .name-container input[type="text"] {
+    height: 20px;
+    font-family: "Kanit", sans-serif; /* Match the font of your page */
+    font-size: 1rem; /* Adjust the font size as needed */
+    color: #fff; /* White text color */
+    background-color: #0D47A1; /* Dark blue, similar to your gradient */
+    border: none; /* Border color to match the darker part of the gradient */
+    border-radius: 50px; /* Slightly round the corners */
+    padding: 10px 15px; /* Add some padding inside the input */
+    margin-top: 0;
+    width: 50%; /* Adjust the width as desired, or use max-width for responsiveness */
+    outline: none; /* Remove the outline to customize focus state below */
+    transition: border-color 0.3s ease; /* Smooth transition for interaction */
+  }
+  
+  .name-container input[type="text"]:focus {
+    border-color: #23d5ab; /* Highlight color when the input is focused */
+  }
+  
+  /* Optional: Adjust the placeholder color */
+  .name-container input[type="text"]::placeholder {
+    color: #ccc; /* Lighter color for the placeholder text */
+  }
+  
+.financial-wrapper{
+    opacity: 0; /* Start invisible */
+  transform: translateY(100px); /* Start slightly below its final position */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.5s ease, visibility 0s 0.5s; /* Transition for smooth reveal, if needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1em;
+}
+
+.financial-wrapper p{
+    font-size: 1.5rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    
+}
+.financial-wrapper input, .financial-wrapper button{
+    max-width: 60%;
+    font-family: "Kanit", sans-serif; /* Match the font of your page */
+    font-size: 1rem; /* Adjust the font size as needed */
+    color: #fff; /* White text color */
+    background-color: #0D47A1; /* Dark blue, similar to your gradient */
+    border: none; /* Border color to match the darker part of the gradient */
+    border-radius: 50px; /* Slightly round the corners */
+    padding: 10px 15px;
+   margin-top: 1em;
+}
+
+.financial-wrapper button:hover{
+    cursor: pointer;
+    background-color: #23d5ab;
+    transition: background-color 1s ease;
+}

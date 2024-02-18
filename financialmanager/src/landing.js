@@ -65,5 +65,5 @@ document.getElementById("name").onkeydown = function(e){
   });
 
   document.getElementById("enter").addEventListener("click", function() {
-    location.href = "overview.html"
+    window.location.href = "overview.html";
   })
