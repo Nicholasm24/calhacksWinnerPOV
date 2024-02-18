@@ -82,7 +82,7 @@ function App() {
       {/* Quiz Area */}
       <div className="container mx-auto mt-4 px-4 flex space-x-6">
         {/* Main Content */}
-        <ProgressBar percentage={50} />
+        <ProgressBar counter={counter} />
         <div className="flex-1">
           <h1 className="text-2xl font-semibold mb-4">Treenance</h1>
           <div className="grid grid-cols-3 gap-2">
