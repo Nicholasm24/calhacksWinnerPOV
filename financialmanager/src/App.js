@@ -5,6 +5,15 @@ import React, { useState, useEffect } from 'react';
 import QuizBox from './QuizBox';
 
 function App() {
+
+  // State variable to keep track of the number of correct answers
+  const [counter, setCounter] = useState(0);
+
+  // function to increment the counter
+  const handleCorrectAnswer = () => {
+    setCounter(counter + 1);
+    console.log('counter: ', counter);
+  };
   
   // Define state variables for the modal and selected answer
   const [isOpen, setIsOpen] = useState(false);
@@ -83,6 +92,8 @@ function App() {
               options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
               handleAnswer={handleAnswer11}
               answerMessage={'This is the correct answer: ...'}
+              handleCorrectAnswer={handleCorrectAnswer}
+              correctAnswerIndex={1}
             />
 
             <QuizBox

@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 
-function QuizBox({ question, options, handleAnswer, answerMessage }) {
+function QuizBox({ question, options, handleAnswer, answerMessage, handleCorrectAnswer, correctAnswerIndex }) {
     const [showModal, setShowModal] = useState(false);
     const [showButton, setShowButton] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
 
+    // Define the four options that will be displayed
+    // and map over them to create buttons
     const modalContent = showModal ? (
         <div className="grid grid-cols-2 gap-2">
             {options.map((option, index) => (
@@ -33,6 +35,11 @@ function QuizBox({ question, options, handleAnswer, answerMessage }) {
     }, []);
 
     const handleOptionClick = (optionIndex) => {
+        // if the clicked option is the correct answer, increment the counter
+        if (optionIndex === correctAnswerIndex) {
+            handleCorrectAnswer();
+        }
+
         handleAnswer(optionIndex);
         setIsOpen(true);
     };
@@ -54,6 +61,7 @@ function QuizBox({ question, options, handleAnswer, answerMessage }) {
                 </button>
             )}
 
+            {/* Show the modal */}
             <div className="absolute bottom-0 right-0">
                 {/* Modal */}
                 <div>
