@@ -1,6 +1,7 @@
 // src/QuizBox.js
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
+import QuizBoxStyle from './QuizBoxStyle.css'
 
 function QuizBox({ question, options, handleAnswer, answerMessage, handleCorrectAnswer, correctAnswerIndex, educationalContent }) {
     const [showModal, setShowModal] = useState(false);
@@ -11,7 +12,7 @@ function QuizBox({ question, options, handleAnswer, answerMessage, handleCorrect
     // Define the four options that will be displayed
     // and map over them to create buttons
     const modalContent = showModal ? (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-200 p-10 z-50">
+        <div className="modal-box fixed top-0 left-0 w-full h-full bg-gray-200 p-10 z-50">
             <div className="grid grid-cols-2 gap-2 h-full">
                 <div className="bg-white p-4 rounded-lg overflow-auto">
                     {/* Add your miscellaneous content here */}
