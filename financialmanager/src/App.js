@@ -1,16 +1,45 @@
 import ProgressBar from './progressBar';
 import Modal from './Modal';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import QuizBox from './QuizBox';
 
 function App() {
-  const modal11 = (
+  
+  // Define state variables for the modal and selected answer
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [showButton, setShowButton] = useState(true);
+
+
+  // define the modal content that will be displayed no matter what
+  const modalContent = 'This is the correct answer: ...'
+
+  const handleAnswer11 = (answer) => {
+    setSelectedAnswer(answer);
+    setIsOpen(true);
+  };
+
+  const modal11 = (title, option1, option2, option3, option4) => showModal ? (
     <div className="grid grid-cols-2 gap-2">
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAnswer11(1)}>Paris</button>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAnswer11(2)}>London</button>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAnswer11(3)}>Berlin</button>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAnswer11(4)}>Madrid</button>
+       <h1>{title}</h1>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAnswer11(1)}>{option1}</button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAnswer11(2)}>{option2}</button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAnswer11(3)}>{option3}</button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleAnswer11(4)}>{option4}</button>
     </div>
-  );
+  ) : null;
+
+  useEffect(() => {
+    const hideModal = () => {
+      setShowModal(false);
+    };
+    document.addEventListener('click', hideModal);
+    return () => {
+      document.removeEventListener('click', hideModal);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-200">
@@ -48,69 +77,61 @@ function App() {
         <div className="flex-1">
           <h1 className="text-2xl font-semibold mb-4">Treenance</h1>
           <div className="grid grid-cols-3 gap-2">
-            <div className="flex flex-col p-3 bg-green-500 h-36 rounded-lg relative">
-              <p>Placeholder name</p>
-              <p>+amount Water</p>
-              <div className="absolute bottom-0 right-0">
-                <Modal title="How do you save money?" content={modal11}/>
-              </div>
-            </div>
-            <div className="flex flex-col bg-green-500 h-36 rounded-lg relative">
-              <p>Placeholder name</p>
-              <p>+amount Water</p>
-              <div className="absolute bottom-0 right-0">
-                <Modal />
-              </div>
-            </div>
-            <div className="flex flex-col bg-green-500 h-36 rounded-lg relative">
-              <p>Placeholder name</p>
-              <p>+amount Water</p>
-              <div className="absolute bottom-0 right-0">
-                <Modal />
-              </div>
-            </div>
-            <div className="flex flex-col bg-green-500 h-36 rounded-lg relative">
-              <p>Placeholder name</p>
-              <p>+amount Water</p>
-              <div className="absolute bottom-0 right-0">
-                <Modal />
-              </div>
-            </div>
-            <div className="flex flex-col bg-green-500 h-36 rounded-lg relative">
-              <p>Placeholder name</p>
-              <p>+amount Water</p>
-              <div className="absolute bottom-0 right-0">
-                <Modal />
-              </div>
-            </div>
-            <div className="flex flex-col bg-green-500 h-36 rounded-lg relative">
-              <p>Placeholder name</p>
-              <p>+amount Water</p>
-              <div className="absolute bottom-0 right-0">
-                <Modal />
-              </div>
-            </div>
-            <div className="flex flex-col bg-green-500 h-36 rounded-lg relative">
-              <p>Placeholder name</p>
-              <p>+amount Water</p>
-              <div className="absolute bottom-0 right-0">
-                <Modal />
-              </div>
-            </div>
-            <div className="flex flex-col bg-green-500 h-36 rounded-lg relative">
-              <p>Placeholder name</p>
-              <p>+amount Water</p>
-              <div className="absolute bottom-0 right-0">
-                <Modal />
-              </div>
-            </div>
-            <div className="flex flex-col bg-green-500 h-36 rounded-lg relative">
-              <p>Placeholder name</p>
-              <p>+amount Water</p>
-              <div className="absolute bottom-0 right-0">
-                <Modal />
-              </div>
-            </div>
+
+            <QuizBox
+              question="Question 1. Correct answers will lead the tree to grow."
+              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              handleAnswer={handleAnswer11}
+            />
+
+            <QuizBox
+              question="Question 1. Correct answers will lead the tree to grow."
+              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              handleAnswer={handleAnswer11}
+            />
+            
+            <QuizBox
+              question="Question 1. Correct answers will lead the tree to grow."
+              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              handleAnswer={handleAnswer11}
+            />
+
+            <QuizBox
+              question="Question 1. Correct answers will lead the tree to grow."
+              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              handleAnswer={handleAnswer11}
+            />
+
+            <QuizBox
+              question="Question 1. Correct answers will lead the tree to grow."
+              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              handleAnswer={handleAnswer11}
+            />
+
+            <QuizBox
+              question="Question 1. Correct answers will lead the tree to grow."
+              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              handleAnswer={handleAnswer11}
+            />
+
+            <QuizBox
+              question="Question 1. Correct answers will lead the tree to grow."
+              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              handleAnswer={handleAnswer11}
+            />
+
+            <QuizBox
+              question="Question 1. Correct answers will lead the tree to grow."
+              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              handleAnswer={handleAnswer11}
+            />
+
+            <QuizBox
+              question="Question 1. Correct answers will lead the tree to grow."
+              options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+              handleAnswer={handleAnswer11}
+            />
+
           </div>
         </div>
       </div>
@@ -119,16 +140,3 @@ function App() {
 }
 
 export default App;
-
-function handleAnswer11(answer) {
-  // Assuming the correct answer is Paris, you can check the selected answer and return an integer accordingly
-  if (answer === 1) {
-    // Correct answer, return an integer
-    console.log("Correct Answer!")
-    return 10; // For example, return 10 as the integer for the correct answer
-  } else {
-    // Incorrect answer, handle it as needed
-    console.log("Incorrect answer");
-    // You might want to provide feedback to the user or perform other actions
-  }
-}
