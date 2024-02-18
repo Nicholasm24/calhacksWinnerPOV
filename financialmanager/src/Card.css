@@ -1,0 +1,61 @@
+/* Card.css */
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  background-color: white; /* Set background color to white */
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+.options label {
+  margin-bottom: 0.5rem; /* Add some space between options */
+}
+
+/* Card.css */
+.options {
+  width: fit-content; /* Set width to fit content */
+  display: flex;
+  flex-direction: column; /* Stack options vertically */
+}
+
+.options label {
+  cursor: pointer; /* Change cursor to pointer when hovering over the options */
+}
+
+.card-title {
+  cursor: pointer;
+}
