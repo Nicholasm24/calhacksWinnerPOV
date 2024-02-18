@@ -1,0 +1,115 @@
+/* p {
+    color: rgb(0, 255, 4);
+} */
+
+/* Additional CSS rules */
+body {
+  background-color: rgb(231, 246, 232);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 50px;
+  color:rgb(14, 110, 15);
+}
+
+.square {
+    height: 100px;
+    width: 100px;
+    background-color: #ff0000;
+    }
+
+#moneytree {
+position: relative;
+padding-left: 10%;
+padding-top: 10%;
+width: 100px;
+height: 100px;
+}
+
+.budgeting:hover { 
+    -ms-transform: scale(6.6); 
+    /* IE 9 */ 
+    -webkit-transform: scale(1.5); 
+    /* Safari 3-8 */ 
+    transform: scale(1.5); 
+} 
+
+#saplingtext{
+    padding-left: 8%;
+}
+
+#arrow{
+    position: relative;
+    /* right: -140px; /* Adjust as needed */
+    top: -140px;
+    padding-left: 120%;
+
+    width: 100px;
+    height: 50px;
+
+
+}
+
+#saving{
+    position: relative;
+    padding-top: 10%;
+    padding-left: 10%;
+}
+
+.budgeting{
+    transition: transform .4s;
+}
+
+.budgeting_arrow{
+    position:relative;
+    padding-top: 15%;
+    padding-left: 15%;
+}
+
+
+  /* ///////////// */
+
+.arrow {
+    position: absolute;
+    top: 55%;
+    left: 130%;
+    transform: translate(-50%, -50%);
+    transform: rotate(-90deg);
+    /* cursor: pointer; */
+}
+
+.arrow span {
+    display: block;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
