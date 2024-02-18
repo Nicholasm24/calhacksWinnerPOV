@@ -12,7 +12,11 @@ function QuizBox({ question, options, handleAnswer, answerMessage, handleCorrect
     // Define the four options that will be displayed
     // and map over them to create buttons
     const modalContent = showModal ? (
-        <div className="modal-box fixed top-0 left-0 w-full h-full bg-gray-200 p-10 z-50">
+        <div 
+            style={{
+                color: 'black',
+            }}
+        className="modal-box fixed top-0 left-0 w-full h-full bg-gray-200 p-10 z-50">
             <div className="grid grid-cols-2 gap-2 h-full">
                 <div className="bg-white p-4 rounded-lg overflow-auto">
                     {/* Add your miscellaneous content here */}
@@ -22,7 +26,7 @@ function QuizBox({ question, options, handleAnswer, answerMessage, handleCorrect
                 {options.map((option, index) => (
                     <button
                         key={index}
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded"
                         onClick={() => handleOptionClick(index + 1)}
                     >
                         {option}

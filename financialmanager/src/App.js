@@ -281,10 +281,6 @@ function App() {
         </div>
       </div>
 
-        <button id = "return" >
-              Return
-        </button>
-
     </div>
   );
 }

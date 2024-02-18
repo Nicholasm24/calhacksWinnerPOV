@@ -23,7 +23,7 @@ const ProgressBar = ({ counter }) => {
 
   return (
     <div className="photo-div bg-blue-200 w-full md:w-1/3 relative">
-      <img src={imageSrc} alt="tree" className="w-full h-auto" />
+      <img src={imageSrc} alt="tree" className="w-full h-auto object-contain" />
       {/* Remove the HTML comment syntax */}
       {/* <div className="bg-blue-500 absolute bottom-0 left-0 rounded-b-lg" style={{ width: `${barWidth}%`, height: `${barHeightFraction * 100}%` }}></div> */}
     </div>

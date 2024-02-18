@@ -336,4 +336,7 @@ body::-webkit-scrollbar {
     margin-top:60% ;
   }
 
+  button>a{
+    text-decoration: none;
+  }
 
