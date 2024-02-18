@@ -94,6 +94,7 @@ function App() {
               answerMessage={'This is the correct answer: ...'}
               handleCorrectAnswer={handleCorrectAnswer}
               correctAnswerIndex={1}
+              educationalContent={'This is the educational content: ...'}
             />
 
             <QuizBox
